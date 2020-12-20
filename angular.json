@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "bbrt"
+  "defaultProject": "bbrt",
+  "cli": {
+    "analytics": "ebca9191-f95e-4738-bbc4-ce7bc305ed0c"
+  }
 }

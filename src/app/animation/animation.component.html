@@ -1,0 +1,17 @@
+<div class="animation" #animation>
+  <div class="star"></div>
+  <div class="rocket" *ngIf="!isCrashed">
+    <div class="rocket-body" #rocketBody style="animation: bounce 1s infinite">
+    </div>
+    <div class="exhaust-flame"></div>
+    <ul class="exhaust-fumes" #fumes>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="boom" *ngIf="isCrashed"></div>
+</div>
+
+<button (click)="start()">start</button>
+<button (click)="crashed()">crashed</button>
