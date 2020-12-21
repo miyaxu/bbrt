@@ -1,6 +1,5 @@
 <div class="animation" #animation>
-  <div class="star"></div>
-  <div class="rocket" *ngIf="!isCrashed">
+  <div class="layer rocketLayer" *ngIf="!isCrashed">
     <div class="rocket-body" #rocketBody style="animation: bounce 1s infinite">
     </div>
     <div class="exhaust-flame"></div>
@@ -10,8 +9,13 @@
       <li></li>
     </ul>
   </div>
-  <div class="boom" *ngIf="isCrashed"></div>
+  <div class="layer boomLayer" *ngIf="isCrashed"></div>
+  <div class="layer oddsLayer">
+    <span class="odds">{{ currenyOdds }}X</span>
+  </div>
 </div>
 
-<button (click)="start()">start</button>
-<button (click)="crashed()">crashed</button>
+<button (click)="start()" [disabled]="(isBegin && !isCrashed) || (!isBegin && isCrashed)">start</button>
+<button (click)="crashed()" [disabled]="!isBegin || isCrashed">crashed</button>
+<button (click)="escape()" [disabled]="!isBegin || isBegin && isCrashed || isEscape">escape</button>
+<button (click)="reset()" [disabled]="!isCrashed">reset</button>

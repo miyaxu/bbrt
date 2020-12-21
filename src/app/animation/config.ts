@@ -1,4 +1,4 @@
-const rocketConfig = [
+const ROCKET_CONFIG = [
 	{
 		odds_int: 1,
 		total_need: 12,
@@ -116,4 +116,4 @@ const rocketConfig = [
 	},
 ];
 
-export { rocketConfig }
+export { ROCKET_CONFIG }

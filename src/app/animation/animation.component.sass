@@ -4,26 +4,33 @@ $midgrey: #b4b2b2
 $darkgrey: #554842
 $red: #f01a19
 $darkred: #a75248
-  
+
+button
+  &:disabled
+    cursor: not-allowed
+    color: #ccc
+
 .animation
   position: relative
-  background-image: url(/assets/bg.jpg)
-
-  transition: background-position 1s linear
-  background-position-y: 0
-
+  background-image: url('^assets/bg.jpg')
   overflow: hidden
 
-.rocket
+.layer
+  position: absolute
+  top: 0
+  height: 100%
+  width: 100%
+
+.rocketLayer
   position: absolute
   top: 55%
-  width: 164px
+  width: 128px
   left: calc(50% - 80px)
   .rocket-body
-    width: 164px
-    height: 164px
+    width: 128px
+    height: 128px
     // left: calc(50% - 100px)
-    background-image: url(/assets/rocket.png)
+    background-image: url('^assets/rocket.png')
     background-size: 100%
 
   .exhaust-flame
@@ -68,12 +75,22 @@ $darkred: #a75248
       top: 44px
       animation: fumes2 10s infinite
 
-.boom
+.boomLayer
   width: 100%
   height: 100%
-  background: url(/assets/boom.png) no-repeat
+  background: url('^assets/boom.png') no-repeat
   background-position: 50%
   background-size: 60%
+
+.oddsLayer
+  text-align: center
+  .odds
+    display: inline-block
+    min-width: 250px
+    max-width: 350px
+    font-size: 100px
+    text-align: right
+    color: red
 
 @keyframes fumes
   50%
